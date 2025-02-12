@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+	<title>Labs - Design Studio</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Labs - Design Studio">
+	<meta name="keywords" content="lab, onepage, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Roboto:300,400,700" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="assets/css/flaticon.css"/>
+	<link rel="stylesheet" href="assets/css/magnific-popup.css"/>
+	<link rel="stylesheet" href="assets/css/owl.carousel.css"/>
+	<link rel="stylesheet" href="assets/css/style.css"/>
 
 
 	<!--[if lt IE 9]>
@@ -13,7 +30,21 @@
 <body>
 	
 	<!-- Header section -->
-	
+	<header class="header-section">
+		<div class="logo">
+			<img src="assets/img/logo.png" alt=""><!-- Logo -->
+		</div>
+		<!-- Navigation -->
+		<nav>
+			<ul class="menu-list">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="Hobbies.html">Hobbies</a></li>
+				<li><a href="Occupation.html">Occupation</a></li>
+				<li><a href="Music.html">Music</a></li>
+				<li class="active"><a href="Contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
 	<!-- Header section end -->
 	<br> <br> <br> <br> <br> <br>
 	
@@ -31,9 +62,6 @@
 			<div class="container">
 				<?php 
 				session_start();
-				ini_set('display_errors', 1);
-				ini_set('display_startup_errors', 1);
-				error_reporting(E_ALL);
 				if (!isset($_POST['submit'])){
 					
 				echo '<div class="section-title">
@@ -234,7 +262,7 @@
 						$errors[]="passwordErr=null";
 					else
 						$_SESSION['firstName']=$firstName;
-					$comment=addslashes($_POST['comment']);
+					$comment=$_POST['comment'];
 					if ($comment==NULL)
 						$errors[]="commentErr=null";
 					else
@@ -242,24 +270,18 @@
 					$submit=$_POST['submit'];
 					if (count($errors)>0){
 						$errorString=implode("&",$errors);
-						//header("Location: Contact.php?$errorString");
-						redirect("Contact.php?$errorString");
+						header("Location: Contact.php?$errorString");
+					
 					}
 					else{
-					include("functions.php");
-					$dblink = db_connect("contact_data");	
-					$sql="Insert into `contact_info` (`first_name`, `last_name`, `email`, `phone_number`, `username`, `password`, `comments`) values ('$firstName', '$lastName', '$email', '$phoneNumber','$username', '$password', '$comment' )";
-					$dblink->query($sql) or
-						die("<h2>Something went wrong with $sql<br>".$dblink->error."</h2>");
-					echo"<h2>Data sent to database!</h2>";
-					//echo "<h1>Form Results</h1>";
-					//echo "<h2>First Name: $firstName</h2>";
-					//echo "<h2>Last Name: $lastName</h2>";
-					//echo "<h2>Email: $email</h2>";
-					//echo "<h2>Phone Number: $phoneNumber</h2>";
-					//echo "<h2>Username: $username</h2>";
-					//echo "<h2>Password: $password</h2>";
-					//echo "<h2>Comment: $comment</h2>";
+					echo "<h1>Form Results</h1>";
+					echo "<h2>First Name: $firstName</h2>";
+					echo "<h2>Last Name: $lastName</h2>";
+					echo "<h2>Email: $email</h2>";
+					echo "<h2>Phone Number: $phoneNumber</h2>";
+					echo "<h2>Username: $username</h2>";
+					echo "<h2>Password: $password</h2>";
+					echo "<h2>Comment: $comment</h2>";
 					}
 				}
 				
@@ -278,7 +300,9 @@
 	<!-- About section end -->
 
 <!-- Footer section -->
-	
+	<footer class="footer-section">
+		<h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2>
+	</footer>
 	<!-- Footer section end -->
 	
 

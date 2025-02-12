@@ -30,47 +30,52 @@
 <body>
 	
 	<!-- Header section -->
-	<?php
-		include("navigation.php");
-		
-	?>
-	
-	
-	<?php
-	if (isset($_GET['page'])){
-		$page=$_GET['page'];
-		switch($page){
-			case "Hobbies":
-				include("Hobbies.php");
-				break;
-			case "Music":
-				include("Music.php");
-				break;
-			case "Occupation":
-				include("Occupation.php");
-				break;
-			case "Contact":
-				include("Contact.php");
-				break;
-			case "results":
-				include("results.php");
-				break;
-			case "login":
-				include("login.php");
-				break;
-			default:
-				include("home.php");
-				break;
-		}
-	}
-	else
-		include("home.php");
-	?>
-
+	<header class="header-section">
+		<div class="logo">
+			<img src="assets/img/logo.png" alt=""><!-- Logo -->
+		</div>
+		<!-- Navigation -->
+		<nav>
+			<ul class="menu-list">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="Hobbies.html">Hobbies</a></li>
+				<li class="active"><a href="Occupation.html">Occupation</a></li>
+				<li><a href="Music.html">Music</a></li>
+				<li><a href="Contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
 	<!-- Header section end -->
+	<br> <br> <br> <br> <br> <br>
 	
+	
+	
+	<!-- About section -->
+	<div class="about-section">
+		<div class="overlay"></div>
+		
+		<!-- card section end-->
 
-	
+
+		<!-- About contant -->
+		<div class="about-contant">
+			<div class="container">
+				<div class="section-title">
+					<h2><span>Occupation</span></h2>
+				</div>
+				<div class="hero-center">
+					<div class="col-md-12 text-center">
+						<p>As of right now I am currently interning at the UTSA RACE facility and work weekends as a cook at HEB</p>
+					</div>
+					
+				</div>
+			</div>
+				
+				
+				</div>
+			</div>
+	<!-- About section end -->
+
 <!-- Footer section -->
 	<footer class="footer-section">
 		<h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2>
@@ -89,7 +94,6 @@
 	<script src="assets/js/owl.carousel.min.js"></script>
 	<script src="assets/js/circle-progress.min.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script src="assets/js/add-content.js"> </script>
 </body>
-	 
+	
 	</html>
