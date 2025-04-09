@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Labs - Design Studio</title>
+	<title>Sugar Rush Candy Shop - Home</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="Labs - Design Studio">
-	<meta name="keywords" content="lab, onepage, creative, html">
+	<meta name="description" content="Sugar Rush Candy Shop - Home">
+	<meta name="keywords" content="candy, e-commerce, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
 	<link href="img/favicon.ico" rel="shortcut icon"/>
@@ -32,26 +32,94 @@
 	
 	<!-- Header section -->
 	<header class="header-section">
+
+        <!-- Logo -->
 		<div class="logo">
-			<img src="assets/img/logo.png" alt=""><!-- Logo -->
+			<img src="assets/img/logo.png" alt="">
 		</div>
+
+        <!-- Search -->
+        <div class="search-form">
+            <form action="#">
+                <input type="text" placeholder="Search...">
+				<button class="search-btn" type="submit" title="Search"><i class="flaticon-search"></i></button>
+            </form>
+        </div>
+
 		<!-- Navigation -->
 		<nav>
-			<!--<ul class="menu-list">
-				<li><a href="index.html">Home</a></li>
-				<li class="active"><a href="Hobbies.html">Hobbies</a></li>
-				<li><a href="Occupation.html">Occupation</a></li>
-				<li><a href="Music.html">Music</a></li>
-				<li><a href="Contact.html">Contact</a></li>
-			</ul> -->
+			<ul class="menu-list">
+				<li class="active"><a href="Home.html">Home</a></li>
+				<li><a href="Products.html">Products</a></li>
+				<li><a href="Cart.html">Cart</a></li>
+				<li><a href="Login.html">Login</a></li>
+			</ul>
 		</nav>
 	</header>
 	<!-- Header section end -->
-	<br> <br> <br> <br> <br> <br>
 	
 	
-	
+    <!-- Hero Section -->
+	<section class="hero-section" style="background: url('/assets/img/pexels-meruyert-gonullu-6161672.jpg') center/cover no-repeat; height: 90vh;">
+        <div class="hero-content">
+			<div class="hero-center">
+				<h2 style="font-size: 48px;">Welcome to Sugar Rush</h2>
+				<p>Your one-stop shop for the latest candy products</p>
+                <br>
+				<a href="Products.html" class="site-btn">Shop Now</a>
+			</div>
+		</div>
+	</section>
+    <!-- Hero Section end -->
+    
+
+    <!-- Featured Products -->
+	<section class="about-section">
+		<div class="overlay"></div>
+		<div class="container about-contant">
+			<div class="section-title">
+				<h2><span>Featured Products</span></h2>
+			</div>
+			<div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+				<div class="lab-card">
+					<img src="assets/img/product1.jpg" alt="Product">
+					<h2>Candy 1</h2>
+					<p>$99.99</p>
+					<button class="site-btn">Add to Cart</button>
+				</div>
+				<div class="lab-card">
+					<img src="assets/img/product2.jpg" alt="Product">
+					<h2>Candy 2</h2>
+					<p>$99.99</p>
+					<button class="site-btn">Add to Cart</button>
+				</div>
+				<div class="lab-card">
+					<img src="assets/img/product3.jpg" alt="Product">
+					<h2>Candy 3</h2>
+					<p>$99.99</p>
+					<button class="site-btn">Add to Cart</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Newsletter Signup -->
+	<section class="newsletter-section spad">
+		<div class="container">
+			<div class="section-title">
+				<h2><span>Stay Updated</span></h2>
+			</div>
+			<div class="nl-form">
+				<form action="#">
+					<input type="text" placeholder="Enter your email">
+					<button type="submit" class="site-btn">Subscribe</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
 	<!-- About section -->
+    <br> <br> <br> <br> <br> <br>
 	<div class="about-section">
 		<div class="overlay"></div>
 		
@@ -89,14 +157,10 @@
 
 <!-- Footer section -->
 	<footer class="footer-section">
-		<h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2>
+		<h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank" rel="noopener">Colorlib</a></h2>
 	</footer>
 	<!-- Footer section end -->
 	
-
-	
-
-
 
 	<!--====== Javascripts & Jquery ======-->
 	<script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
@@ -105,6 +169,5 @@
 	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
 	<script src="{% static 'js/circle-progress.min.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
-</body>
-	
-	</html>
+    </body>
+</html>
