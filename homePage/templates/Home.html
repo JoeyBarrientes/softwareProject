@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Sugar Rush Candy Shop - Home</title>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
 	<meta name="description" content="Sugar Rush Candy Shop - Home">
 	<meta name="keywords" content="candy, e-commerce, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugar Rush Candy Shop - Home</title>
 	<!-- Favicon -->
 	<link href="img/favicon.ico" rel="shortcut icon"/>
 
@@ -20,6 +20,8 @@
 	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}"/>
 	<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}"/>
 	<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+	<!-- <link rel="stylesheet" href="/homePage/static/css/style.css"/> -->
+
 
 
 	<!--[if lt IE 9]>
@@ -32,35 +34,54 @@
 	
 	<!-- Header section -->
 	<header class="header-section">
+        <div class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="">
+            </div>
 
-        <!-- Logo -->
-		<div class="logo">
-			<img src="assets/img/logo.png" alt="">
-		</div>
+            <!-- Search -->
+            <div class="search-bar">
+                <form action="#">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" title="Search"><i class="flaticon-search"></i>Search</button>
+                    <!-- <button>Search</button> -->
 
-        <!-- Search -->
-        <div class="search-form">
-            <form action="#">
-                <input type="text" placeholder="Search...">
-				<button class="search-btn" type="submit" title="Search"><i class="flaticon-search"></i></button>
-            </form>
+                </form>
+            </div>
+
+            <!-- Navigation -->
+            <nav>
+                <ul class="menu-list">
+                    <li class="active"><a href="Home.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                </ul>
+            </nav>
         </div>
 
-		<!-- Navigation -->
-		<nav>
-			<ul class="menu-list">
-				<li class="active"><a href="Home.html">Home</a></li>
-				<li><a href="Products.html">Products</a></li>
-				<li><a href="Cart.html">Cart</a></li>
-				<li><a href="Login.html">Login</a></li>
-			</ul>
-		</nav>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span>SUGAR</span>
+                <br>
+                <span>RUSH</span>
+            </h1>
+            <div class="pink-circle">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="claim-button">
+            <button>Claim in Framer</button>
+        </div>
 	</header>
 	<!-- Header section end -->
 	
 	
     <!-- Hero Section -->
-	<section class="hero-section" style="background: url('/assets/img/pexels-meruyert-gonullu-6161672.jpg') center/cover no-repeat; height: 90vh;">
+	<!-- <section class="hero-section" style="background: url('/assets/img/pexels-meruyert-gonullu-6161672.jpg') center/cover no-repeat; height: 90vh;">
         <div class="hero-content">
 			<div class="hero-center">
 				<h2 style="font-size: 48px;">Welcome to Sugar Rush</h2>
@@ -69,7 +90,7 @@
 				<a href="Products.html" class="site-btn">Shop Now</a>
 			</div>
 		</div>
-	</section>
+	</section> -->
     <!-- Hero Section end -->
     
 
@@ -126,33 +147,7 @@
 		<!-- card section end-->
 
 
-		<!-- About contant -->
-		<div class="about-contant">
-			<div class="container">
-				<div class="section-title">
-					<h2><span>Hobbies</span></h2>
-				</div>
-				<div class="hero-center">
-					<div class="col-md-12 text-center">
-						<p class="font">I enjoy many things outside my school work such as weight lifting, <i>Muay Thai</i>, and music!</p>
-							<ul>
-								<li>Martial Arts</li>
-									<ul>
-										<li>Muay Thai</li>
-										<li>Jiu-Jitsu</li>
-										<li>Wrestling</li>
-									</ul>
-								<li>Weight Training</li>
-								<li>Reading</li>
-							</ul>
-					</div>
-					
-				</div>
-			</div>
-				
-				
-				</div>
-			</div>
+	</div>
 	<!-- About section end -->
 
 <!-- Footer section -->
@@ -162,7 +157,7 @@
 	<!-- Footer section end -->
 	
 
-	<!--====== Javascripts & Jquery ======-->
+	<!--====== Javascript & Jquery ======-->
 	<script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script src="{% static 'js/magnific-popup.min.js' %}"></script>

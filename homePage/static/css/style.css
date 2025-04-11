@@ -12,8 +12,8 @@
 
 /* Color Scheme */
 :root {
-    --primary-color: #6a4c93;
-    --secondary-color: #a0eec0;
+    --primary-color: #6e2af9;
+    --secondary-color: #9befab;
     --search-bar-color: #f0e6ef;
     --text-color: #0b1033;
     --text-light-color: #6c6e7e;
@@ -32,20 +32,28 @@ testColors{
     color2: #6a4c93;
     color3: #72ddf7;
     color4: #a0eec0;
-    /* color5: #392F5A; */
-    /* color6: #f1f1f1; */
+    color5: #6e2af9;
+    color6: #9df1ae;
     /* color7: #f5faf8; */
     /* color8: #220c3b; */
 }
 
-/* * {
-    outline: auto red 1px;
-} */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* outline: auto grey 1px; */
+}
 
 html,
 body {
 	height: 100%;
 	font-family: "Roboto", sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    padding: 17px;
 }
 
 img {
@@ -302,11 +310,58 @@ ol {
 /*------------------------
 	Header css
 --------------------------*/
-/* .responsive {
+.responsive {
 	display: none;
-} */
+}
 
 .header-section {
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    color: white;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 8px 16px;
+    border-radius: 50px;
+    outline: auto grey 1px;
+    margin-right: auto;
+}
+
+.search-bar {
+    flex: 0 1 300px;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.search-bar button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Old */
+/* .header-section {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -320,15 +375,19 @@ ol {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* justify-content: space-around; */
+    justify-content: space-around;
     align-items: center;
-    
-}
+} */
+
+/* Header/Hero Section */
+
+
 
 .header-section .logo {
-	display: inline-block;
-	float: left;
-	padding-top: 30px;
+	/* display: inline-block; */
+	/* float: left; */
+	/* padding-top: 30px; */
+    padding: 10px;
 }
 
 .header-section .logo img {
@@ -339,22 +398,28 @@ ol {
 }
 
 .header-section .menu-list {
+    outline: auto red 1px;
 	list-style: none;
 	float: right;
+    padding: 10px;
+    /* border-radius: 50px; */
 }
 
 .header-section .menu-list li {
 	display: inline;
+    outline: auto red 1px;
 }
 
 .header-section .menu-list li a {
-	display: inline-block;
-	padding: 35px 15px;
-	margin-right: 15px;
+	/* display: inline-block; */
+	padding: 12px 20px;
+	/* margin-right: 15px; */
+    
 	color: #222;
 	position: relative;
 	font-family: "Roboto", sans-serif;
-	font-size: 15px;
+	font-size: 14px;
+    font-weight: 700;
 	letter-spacing: 0.09em;
 	-webkit-transition: all 0.4s ease 0s;
 	-o-transition: all 0.4s ease 0s;
@@ -371,7 +436,6 @@ ol {
 }
 
 .header-section .menu-list li.active a {
-	background: var(--secondary-color);
 	color: var(--primary-color);
 }
 
@@ -383,12 +447,69 @@ ol {
 /*------------------------
 	Hero section
 --------------------------*/
-.hero-section {
-	height: 100%;
-	position: relative;
-}
 
 .hero-content {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    position: relative;
+    height: 700px;
+    padding: 50px;
+}
+
+.hero-title {
+    font-size: 160px;
+    font-weight: 900;
+    /* line-height: 0.9; */
+    text-align: center;
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+}
+
+.hero-title{
+    height: 100%;
+    padding: 32px;
+    /* outline: auto orange 2px; */
+}
+
+
+.pink-circle {
+    position: absolute;
+    top: 20px;
+    right: 20%;
+    background-color: #ff85b3;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    z-index: 3;
+}
+
+.claim-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.claim-button button {
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+}
+/* .hero-section {
+	height: 100%;
+	position: relative;
+} */
+
+/* .hero-content {
 	position: absolute;
 	width: calc(100% - 210px);
 	height: 100%;
@@ -408,7 +529,7 @@ ol {
 	color: #0b1033;
 	margin-bottom: 0;
 	margin-top: 35px;
-}
+} */
 
 .owl-carousel .owl-nav {
 	position: absolute;
