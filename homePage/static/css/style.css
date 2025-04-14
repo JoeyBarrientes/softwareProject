@@ -42,7 +42,7 @@ testColors{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* outline: auto grey 1px; */
+    /* outline: auto red 1px; */
 }
 
 html,
@@ -306,9 +306,11 @@ ol {
 	}
 }
 
-
 /*------------------------
-	Header css
+	Homepage
+--------------------------*/
+/*------------------------
+	Header Section
 --------------------------*/
 .responsive {
 	display: none;
@@ -359,29 +361,6 @@ ol {
     color: #666;
     font-size: 14px;
 }
-
-/* Old */
-/* .header-section {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 999;
-	padding: 0 50px;
-	background: white;
-	-webkit-transition: all 0.4s ease 0s;
-	-o-transition: all 0.4s ease 0s;
-	transition: all 0.4s ease 0s;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-content: space-around;
-    align-items: center;
-} */
-
-/* Header/Hero Section */
-
-
 
 .header-section .logo {
 	/* display: inline-block; */
@@ -504,32 +483,206 @@ ol {
     border-radius: 50px;
     font-size: 14px;
 }
-/* .hero-section {
-	height: 100%;
-	position: relative;
-} */
 
-/* .hero-content {
-	position: absolute;
-	width: calc(100% - 210px);
-	height: 100%;
-	margin-left: 105px;
-	display: table;
-	text-align: center;
-	z-index: 5;
+/* Feature Cards */
+.feature-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-.hero-content .hero-center {
-	display: table-cell;
-	vertical-align: middle;
+.card {
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    height: 300px;
+    display: flex;
+    position: relative;
 }
 
-.hero-content p {
-	font-size: 24px;
-	color: #0b1033;
-	margin-bottom: 0;
-	margin-top: 35px;
-} */
+.orange-card {
+    background-color: #ff7846;
+    justify-content: center;
+    align-items: center;
+}
+
+.orange-card h2 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.green-card {
+    background-color: #a2f0b9;
+    color: #333;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-content h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card-content .product-image {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    height: 200px;
+    width: auto;
+}
+
+/* Small Feature Cards */
+.feature-cards-small {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.brown-card {
+    background-color: #3e2e1e;
+    justify-content: center;
+    align-items: center;
+}
+
+.circular-stamp {
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.heart-icon {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.purple-card {
+    background-color: #8c52ff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.new-tag {
+    font-size: 14px;
+    transform: rotate(-10deg);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.menu-buttons button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+/* Products Showcase Section */
+.products-section {
+    background-color: #e8ecf4;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 15px;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.icon-circle {
+    background-color: #22e275;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.product-image {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.product-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #666;
+}
+
+.product-price {
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+}
 
 .owl-carousel .owl-nav {
 	position: absolute;
@@ -689,7 +842,6 @@ ol {
 	padding-top: 20px;
 	padding-left: 5px;
 }
-
 
 /*------------------------
   Testimonial section
@@ -1020,17 +1172,83 @@ ol {
 
 
 /*------------------------
-	Footer section
+	Newsletter section
 --------------------------*/
-.footer-section {
-	background: #220c3b;
-	text-align: center;
+.newsletter-section {
+    background-color: #a2f0b9;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-.footer-section h2 {
-	color: var(--primary-color);
-	font-size: 14px;
-	padding: 18px 0;
+.newsletter-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.newsletter-section p {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    font-size: 14px;
+}
+
+.newsletter-form button {
+    background-color: #8c52ff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 0 50px 50px 0;
+    font-size: 14px;
+}
+
+/*------------------------
+	Footer section
+--------------------------*/
+footer {
+    background-color: #8c52ff;
+    border-radius: 20px;
+    padding: 40px;
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: white;
+    font-size: 16px;
 }
 
 /*=========================
@@ -1162,15 +1380,15 @@ ol {
 /*------------------------
 	Newsletter Section
 --------------------------*/
-.newsletter-section {
+/* .newsletter-section {
 	background: var(--secondary-color);
-}
+} */
 
-.newsletter-section h2 {
+/* .newsletter-section h2 {
 	font-size: 48px;
 	color: #fff;
 	font-weight: 400;
-}
+} */
 
 /* Newsletter form */
 .nl-form {
@@ -1669,6 +1887,17 @@ ol {
 	font-size: 16px;
 	font-weight: 500;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
