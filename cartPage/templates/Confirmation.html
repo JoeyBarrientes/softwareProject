@@ -83,46 +83,6 @@
         <a href="{% url 'cart' %}" class="site-btn">Return to Cart</a>
     </div>
 	
-    <div class="cart-container">
-        <div class="cart-items">
-            <h2>Your Cart</h2>
-            <div class="cart-item">
-                <p>Item 1 - $10.00</p>
-            </div>
-            <div class="cart-item">
-                <p>Item 2 - $15.00</p>
-            </div>
-            <div class="cart-item">
-                <p>Item 3 - $20.00</p>
-            </div>
-        </div>
-        <div class="checkout-section">
-            <h2>Checkout</h2>
-            <p>Total: $45.00</p>
-            <form action="{% url 'confirmation' %}" method="POST" class="checkout-form">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                </div>
-                <div class="form-group">
-                    <label for="number">Phone Number:</label>
-                    <input type="tel" id="number" name="number" placeholder="Enter your phone number">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="address">Address:</label>
-                    <textarea id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="site-btn">Proceed to Checkout</button>
-            </form>
-        </div>
-    </div>
-
-
 
     <!-- Footer section -->
     <footer>
