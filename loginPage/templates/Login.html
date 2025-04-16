@@ -32,28 +32,40 @@
 	
 	<!-- Header section -->
 	<header class="header-section">
-		<div class="logo">
-			<img src="assets/img/logo.png" alt=""><!-- Logo -->
-		</div>
-		<!-- Navigation -->
-		<nav>
-			<!--<ul class="menu-list">
-				<li><a href="index.html">Home</a></li>
-				<li class="active"><a href="Hobbies.html">Hobbies</a></li>
-				<li><a href="Occupation.html">Occupation</a></li>
-				<li><a href="Music.html">Music</a></li>
-				<li><a href="Contact.html">Contact</a></li>
-			</ul> -->
-		</nav>
+		<div class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="">
+            </div>
+
+            <!-- Search -->
+            <div class="search-bar">
+                <form action="#">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" title="Search"><i class="flaticon-search"></i>Search</button>
+                    <!-- <button>Search</button> -->
+
+                </form>
+            </div>
+
+            <!-- Navigation -->
+            <nav>
+                <ul class="menu-list">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                    <li class="active"><a href="Login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
 	</header>
 	<!-- Header section end -->
-	<br> <br> <br> <br> <br> <br>
+	{% comment %} <br> <br> <br> <br> <br> <br> {% endcomment %}
 	
 	
 	
 	<!-- About section -->
 	<div class="about-section">
-		<div class="overlay"></div>
 		
 		<!-- card section end-->
 
@@ -62,29 +74,25 @@
 		<div class="about-contant">
 			<div class="container">
 				<div class="section-title">
-					<h2><span>Hobbies</span></h2>
+					<h2><span>Login</span></h2>
 				</div>
 				<div class="hero-center">
 					<div class="col-md-12 text-center">
-						<p class="font">I enjoy many things outside my school work such as weight lifting, <i>Muay Thai</i>, and music!</p>
-							<ul>
-								<li>Martial Arts</li>
-									<ul>
-										<li>Muay Thai</li>
-										<li>Jiu-Jitsu</li>
-										<li>Wrestling</li>
-									</ul>
-								<li>Weight Training</li>
-								<li>Reading</li>
-							</ul>
+						<p class="font">*Indicates required field</p>
 					</div>
-					
 				</div>
 			</div>
-				
-				
-				</div>
+		</div>
+		<div class="form-container">
+			<div class="input-group mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-default">Username*</span>
+				<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 			</div>
+			<div class="input-group mb-3">
+				<span class="input-group-text" id="inputGroup-sizing-default">Password*</span>
+				<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+			</div>
+		</div>
 	<!-- About section end -->
 
 <!-- Footer section -->

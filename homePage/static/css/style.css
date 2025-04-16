@@ -1012,12 +1012,25 @@ ol {
 	font-weight: 400;
 	color: var(--secondary-color);
 	margin-bottom: 20px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .contact-info .con-item {
 	font-size: 14px;
 }
 
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* height: 100vh; Full viewport height */
+	padding-bottom: 20px;
+}
 
 /*------------------------
 	Footer section
