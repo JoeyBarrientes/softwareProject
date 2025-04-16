@@ -69,6 +69,19 @@
         </div>
 	</header>
 	<!-- Header section end -->
+
+    <!-- Confirmation section -->
+    <div class="confirmation-container">
+        <h1>Thank You for Your Order!</h1>
+        <p>Your order has been successfully placed.</p>
+        <div class="confirmation-details">
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Phone Number:</strong> {{ number }}</p>
+            <p><strong>Email:</strong> {{ email }}</p>
+            <p><strong>Address:</strong> {{ address }}</p>
+        </div>
+        <a href="{% url 'cart' %}" class="site-btn">Return to Cart</a>
+    </div>
 	
     <div class="cart-container">
         <div class="cart-items">
