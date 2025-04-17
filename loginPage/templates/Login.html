@@ -60,10 +60,10 @@
             <!-- Navigation -->
             <nav>
                 <ul class="menu-list">
-                    <li class="active"><a href="Home.html">Home</a></li>
-                    <li><a href="Products.html">Products</a></li>
-                    <li><a href="Cart.html">Cart</a></li>
-                    <li><a href="Login.html">Login</a></li>
+                    <li class="active"><a href="{% url 'home'%}">Home</a></li>
+                    <li><a href="{% url 'products'%}">Products</a></li>
+                    <li><a href="{% url 'cart'%}">Cart</a></li>
+                    <li><a href="{% url 'login'%}">Login</a></li>
                 </ul>
             </nav>
         </div>
@@ -93,6 +93,7 @@
 				</div>
 			</div>
 		</div>
+		<!--
 		<div class="form-container">
 			<div class="input-group mb-3">
 				<span class="input-group-text" id="inputGroup-sizing-default">Username*</span>
@@ -103,6 +104,14 @@
 				<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 			</div>
 		</div>
+		-->
+		<form method="post">
+			{% csrf_token %}
+			<input type="text" name="username" placeholder="Username" required>
+			<input type="password" name="password" placeholder="Password" required>
+			<button type="submit">Login</button>
+			{% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
+		  </form>
     </div>
 	<!-- About section end -->
 
