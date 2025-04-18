@@ -84,7 +84,7 @@
 		<div class="about-contant">
 			<div class="container">
 				<div class="section-title">
-					<h2><span>Login</span></h2>
+					<h2><span>Registration</span></h2>
 				</div>
 				<div class="hero-center">
 					<div class="col-md-12 text-center">
@@ -107,6 +107,12 @@
 		-->
 		<form method="post" class="form-container">
 			{% csrf_token %}
+			{% comment %} <input type="text" name="username" placeholder="Username*" required>
+			<input type="password" name="password" placeholder="Password*" required> {% endcomment %}
+            <div class="form-container">
+				<span class="input-group-text" id="inputGroup-sizing-default">Email*</span>
+				<input type="email" class="form-control" name="email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+			</div>
 			<div class="form-container">
 				<span class="input-group-text" id="inputGroup-sizing-default">Username*</span>
 				<input type="text" class="form-control" name="username" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
@@ -115,14 +121,10 @@
 				<span class="input-group-text" id="inputGroup-sizing-default">Password*</span>
 				<input type="text" class="form-control" name="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 			</div>
-			<button class="btn btn-primary custom-btn" type="submit">Create</button>
+			<button class="btn btn-primary" type="submit">Create</button>
 			{% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
 		</form>
 
-		<div class="form-container">
-			<p>Don't have an account?</p>
-			<button type="button" class="btn btn-primary custom-btn">Register</button>
-		</div>
     </div>
 	<!-- About section end -->
 

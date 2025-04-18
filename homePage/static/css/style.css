@@ -182,7 +182,7 @@ ol {
 	width: 5px;
 	height: 30px;
 	margin-left: -2.5px;
-	background: var(--secondary-color);
+	/* background: var(--secondary-color); */
 }
 
 .section-title.left {
@@ -744,6 +744,8 @@ ol {
 	background: var(--primary-color);
 	position: relative;
 	z-index: 2;
+	border-radius: 20px;
+	margin-bottom: 15px;
 }
 
 .overlay {
@@ -1278,7 +1280,19 @@ ol {
 	padding-bottom: 20px;
 }
 
+.form-container p {
+	color: white;
+}
 
+.form-container span {
+	color: white;
+}
+
+.custom-btn {
+    background-color: #9befab;
+    border-color: #9befab;
+    color: #0b1033; /* Optional: Change text color */
+}
 /*------------------------
 	Newsletter section
 --------------------------*/
