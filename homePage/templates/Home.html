@@ -52,7 +52,6 @@
                 <form action="#">
                     <input type="text" placeholder="Search...">
                     <button type="submit" title="Search"><i class="flaticon-search"></i>Search</button>
-                    <!-- <button>Search</button> -->
 
                 </form>
             </div>
@@ -224,10 +223,10 @@
             </div>
             <h2 class="footer-logo">SUGAR RUSH</h2>
             <nav class="footer-links">
-                <a href="#">Home</a>
-                <a href="#">Products</a>
-                <a href="#">Cart</a>
-                <a href="#">Login</a>
+                <a href="{% url 'home'%}">Home</a>
+                <a href="{% url 'products'%}">Products</a>
+                <a href="{% url 'cart'%}">Cart</a>
+                <a href="{% url 'login'%}">Login</a>
             </nav>
             <span class="footer-text">2025 All rights reserved.</span>
         </div>
