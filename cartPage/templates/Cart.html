@@ -43,19 +43,18 @@
 	<header class="header-section">
         <div class="navbar">
             <!-- Logo -->
-            <div class="logo">
+            <!-- <div class="logo">
                 <img src="assets/img/logo.png" alt="">
-            </div>
+            </div> -->
 
             <!-- Search -->
-            <div class="search-bar">
+            <!-- <div class="search-bar">
                 <form action="#">
                     <input type="text" placeholder="Search...">
                     <button type="submit" title="Search"><i class="flaticon-search"></i>Search</button>
-                    <!-- <button>Search</button> -->
 
                 </form>
-            </div>
+            </div> -->
 
             <!-- Navigation -->
             <nav>
@@ -73,19 +72,13 @@
     <div class="cart-container">
         <div class="cart-items">
             <h2>Your Cart</h2>
-            <div class="cart-item">
-                <p>Item 1 - $10.00</p>
-            </div>
-            <div class="cart-item">
-                <p>Item 2 - $15.00</p>
-            </div>
-            <div class="cart-item">
-                <p>Item 3 - $20.00</p>
+            <div id="cartItems">
+                <p>Your cart is empty.</p>
             </div>
         </div>
         <div class="checkout-section">
             <h2>Checkout</h2>
-            <p>Total: $45.00</p>
+            <p>Total: $<span id="cartTotal">0.00</span></p>
             <form action="{% url 'confirmation' %}" method="POST" class="checkout-form">
                 {% csrf_token %}
                 <div class="form-group">
@@ -104,7 +97,7 @@
                     <label for="address">Address:</label>
                     <textarea id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>
                 </div>
-                <button type="submit" class="site-btn">Proceed to Checkout</button>
+                <button class="site-btn" id="checkoutBtn">Proceed to Checkout</button>
             </form>
         </div>
     </div>

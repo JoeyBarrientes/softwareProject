@@ -551,20 +551,27 @@ ol {
 
 /* Small Feature Cards */
 .feature-cards-small {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
     gap: 15px;
     margin-bottom: 15px;
+    width: auto;
 }
 
 .brown-card {
     background-color: #3e2e1e;
     justify-content: center;
     align-items: center;
+    /* width: 100%; */
+    height: 65rem;
+}
+
+.filtered {
+	filter: brightness(0.75) sepia(0.5);
 }
 
 .circular-stamp {
-    border: 2px solid white;
+    border: 4px solid white;
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -572,7 +579,7 @@ ol {
     justify-content: center;
     align-items: center;
     position: relative;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
 }
 
@@ -596,6 +603,7 @@ ol {
     gap: 30px;
     width: 100%;
 }
+
 
 .new-tag {
     font-size: 14px;
@@ -1021,12 +1029,14 @@ ol {
 }
 
 .product-item {
-    flex: 1 1 calc(33.333% - 20px); /* 3 items per row */
+    flex: 1 1 45%;
     box-sizing: border-box;
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+    height: 50rem;
+    width: auto;
 }
 
 .product-image img {
