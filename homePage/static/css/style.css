@@ -2568,3 +2568,36 @@ footer {
 .logout-btn:hover {
     color: var(--primary-color); 
 }
+
+.search-bar {
+    flex: 0 1 300px;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+
+
+.search-bar button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #666;
+    font-size: 14px;
+}
+
+input[type="text"] {
+    color: #000 !important;
+    background-color: #fff !important;
+}

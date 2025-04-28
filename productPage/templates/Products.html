@@ -56,13 +56,13 @@
                 </form>
             </div> -->
 
-            <!-- Navigation -->
-            <nav>
-                <ul class="menu-list">
+            <!-- Navigation with Search -->
+            <nav style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                <ul class="menu-list" style="flex-grow: 1;">
                     <li><a href="{% url 'home'%}">Home</a></li>
                     <li><a href="{% url 'products'%}">Products</a></li>
                     <li {% if request.path == '/cart/' %}class="active"{% endif %}><a href="{% url 'cart'%}">Cart</a></li>
-            
+
                     {% if user.is_authenticated %}
                         <li class="welcome-user"><a href="#">Welcome, {{ user.username }}</a></li>
                         <li>
@@ -75,6 +75,14 @@
                         <li><a href="{% url 'login'%}">Login</a></li>
                     {% endif %}
                 </ul>
+
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <form method="get" action="{% url 'search' %}">
+                        <input type="text" name="q" placeholder="Search products...">
+                        <button type="submit" title="Search"><i class="flaticon-search"></i>Search</button>
+                    </form>
+                </div>
             </nav>
         </div>
 
