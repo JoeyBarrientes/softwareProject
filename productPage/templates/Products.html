@@ -60,9 +60,20 @@
             <nav>
                 <ul class="menu-list">
                     <li><a href="{% url 'home'%}">Home</a></li>
-                    <li class="active"><a href="{% url 'products'%}">Products</a></li>
-                    <li><a href="{% url 'cart'%}">Cart</a></li>
-                    <li><a href="{% url 'login'%}">Login</a></li>
+                    <li><a href="{% url 'products'%}">Products</a></li>
+                    <li {% if request.path == '/cart/' %}class="active"{% endif %}><a href="{% url 'cart'%}">Cart</a></li>
+            
+                    {% if user.is_authenticated %}
+                        <li class="welcome-user"><a href="#">Welcome, {{ user.username }}</a></li>
+                        <li>
+                            <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="logout-btn">Logout</button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li><a href="{% url 'login'%}">Login</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
@@ -99,7 +110,7 @@
                         <div class="product-description">{{ Product.product_Description}}</div>
                         <div class="product-price">{{ Product.product_Price}}</div>
                     </div>
-                    <button class="add-to-cart-btn site-btn" data-id="{{ Product.id }}" data-title="{{ Product.product_Title }}" data-price="{{ Product.product_Price }}">Add to Cart</button>
+                    <a href="{% url 'add_to_cart' Product.id %}" class="site-btn">Add to Cart</a>
                 </div>
                 {% empty %}
                     <p>No candies</p>

@@ -61,8 +61,19 @@
                 <ul class="menu-list">
                     <li><a href="{% url 'home'%}">Home</a></li>
                     <li><a href="{% url 'products'%}">Products</a></li>
-                    <li class="active"><a href="{% url 'cart'%}">Cart</a></li>
+                    <li {% if request.path == '/cart/' %}class="active"{% endif %}><a href="{% url 'cart'%}">Cart</a></li>
+                    
+                {% if user.is_authenticated %}
+                    <li class="welcome-user"><a href="#">Welcome, {{ user.username }}</a></li>
+                    <li>
+                        <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="logout-btn">Logout</button>
+                        </form>
+                    </li>
+                {% else %}
                     <li><a href="{% url 'login'%}">Login</a></li>
+                {% endif %}
                 </ul>
             </nav>
         </div>
@@ -72,13 +83,38 @@
     <div class="cart-container">
         <div class="cart-items">
             <h2>Your Cart</h2>
-            <div id="cartItems">
-                <p>Your cart is empty.</p>
-            </div>
+                <div id="cartItems">
+                    {% if cart_items %}
+                    <ul>
+                        {% for item in cart_items %}
+                            <li>
+                                {{ item.product.product_Title }} - Quantity: {{ item.quantity }} - Price: ${{ item.get_total_price|default:item.total_price }}
+                                <!-- Remove Button -->
+                                <form method="post" action="{% url 'remove_from_cart' item.product.id %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit">Remove</button>
+                                </form>
+                                <!-- Adjust Quantity -->
+                                <form method="post" action="{% url 'update_quantity' item.product.id %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <input type="number" name="quantity" value="{{ item.quantity }}" min="1" style="width:40px;">
+                                    <button type="submit">Update</button>
+                                </form>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                        <p>Your cart is empty.</p>
+                    {% endif %}
+                </div>
+            
+            <p>Total: $<span id="cartTotal">{{ total }}</span></p>
+
+            
         </div>
         <div class="checkout-section">
             <h2>Checkout</h2>
-            <p>Total: $<span id="cartTotal">0.00</span></p>
+            <p>Total: $<span id="checkoutTotal">{{ total }}</span></p>
             <form action="{% url 'confirmation' %}" method="POST" class="checkout-form">
                 {% csrf_token %}
                 <div class="form-group">

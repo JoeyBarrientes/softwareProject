@@ -59,10 +59,21 @@
             <!-- Navigation -->
             <nav>
                 <ul class="menu-list">
-                    <li class="active"><a href="{% url 'home'%}">Home</a></li>
+                    <li><a href="{% url 'home'%}">Home</a></li>
                     <li><a href="{% url 'products'%}">Products</a></li>
-                    <li><a href="{% url 'cart'%}">Cart</a></li>
-                    <li><a href="{% url 'login'%}">Login</a></li>
+                    <li {% if request.path == '/cart/' %}class="active"{% endif %}><a href="{% url 'cart'%}">Cart</a></li>
+            
+                    {% if user.is_authenticated %}
+                        <li class="welcome-user"><a href="#">Welcome, {{ user.username }}</a></li>
+                        <li>
+                            <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="logout-btn">Logout</button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li><a href="{% url 'login'%}">Login</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>

@@ -2544,3 +2544,27 @@ footer {
 .login-section .form-footer a:hover {
     text-decoration: underline;
 }
+
+.welcome-user a {
+    font-weight: 700; 
+    color: #222; 
+    padding: 12px 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.09em;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: #222; 
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    color: var(--primary-color); 
+}
