@@ -19,6 +19,8 @@ from django.urls import path, include
 from homePage.views import home
 from django.contrib.auth.views import LogoutView
 from productPage import views as product_views
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
@@ -29,7 +31,11 @@ urlpatterns = [
     path('', include('loginPage.urls')),
 
     path('products/', product_views.product, name='products'),
-    path('search/', product_views.search, name='search'),
+    # path('search/', product_views.search, name='search'),
 
     path('logout/', LogoutView.as_view(), name='logout'),
 ]
+
+# Serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

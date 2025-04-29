@@ -43,19 +43,18 @@
     <header class="header-section">
         <div class="navbar">
             <!-- Logo -->
-            <div class="logo">
+            <!-- <div class="logo">
                 <img src="assets/img/logo.png" alt="">
-            </div>
+            </div> -->
 
             <!-- Search -->
-            <div class="search-bar">
+            <!-- <div class="search-bar">
                 <form action="#">
                     <input type="text" placeholder="Search...">
                     <button type="submit" title="Search"><i class="flaticon-search"></i>Search</button>
-                    <!-- <button>Search</button> -->
 
                 </form>
-            </div>
+            </div> -->
 
             <!-- Navigation -->
             <nav>
@@ -130,7 +129,7 @@
 			</div>
 			<div class="form-container">
 				<span class="input-group-text" id="inputGroup-sizing-default">Password*</span>
-				<input type="text" class="form-control" name="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+				<input type="password" class="form-control" name="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 			</div>
 			<button class="btn btn-primary" type="submit">Create</button>
 			{% if error %}<p style="color:red;">{{ error }}</p>{% endif %}

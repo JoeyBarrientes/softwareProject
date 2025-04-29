@@ -76,13 +76,6 @@
                     {% endif %}
                 </ul>
 
-                <!-- Search Bar -->
-                <div class="search-bar">
-                    <form method="get" action="{% url 'search' %}">
-                        <input type="text" name="q" placeholder="Search products...">
-                        <button type="submit" title="Search"><i class="flaticon-search"></i>Search</button>
-                    </form>
-                </div>
             </nav>
         </div>
 
@@ -102,12 +95,11 @@
 	
 
     <!-- Products Section -->
-    <section class="product-section">
+    <!-- <section class="product-section">
         <div class="container">
             <p class="section-description"></p>
 
             <div class="product-grid">
-                <!-- Row 1 -->
                  {% for Product in products %}
                 <div class="product-item">
                     <div class="product-image">
@@ -117,6 +109,7 @@
                         <div class="product-brand">{{ Product.product_Title}}</div>
                         <div class="product-description">{{ Product.product_Description}}</div>
                         <div class="product-price">{{ Product.product_Price}}</div>
+                        <div class="product-price">{{ Product.product_Quantity}}</div>
                     </div>
                     <a href="{% url 'add_to_cart' Product.id %}" class="site-btn">Add to Cart</a>
                 </div>
@@ -124,6 +117,122 @@
                     <p>No candies</p>
                 {% endfor %}
             </div>
+        </div>
+    </section> -->
+    <!-- <section class="product-section">
+        <div class="container">
+            <p class="section-description"></p>
+    
+            <div class="product-grid">
+                {% for Product in products %}
+                <div class="product-item">
+                    <div class="product-image">
+                        {% if Product.product_Image %}
+                        <img src="{{ Product.product_Image.url }}" alt="{{ Product.product_Title }}">
+                        {% else %}
+                        <img src="{% static 'images/default-product.png' %}" alt="Default Image">
+                        {% endif %}
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">{{ Product.product_Title }}</div>
+                        <div class="product-description">{{ Product.product_Description }}</div>
+                        <div class="product-price">Price: ${{ Product.product_Price }}</div>
+                        <div class="product-quantity">Quantity: {{ Product.product_Quantity }}</div>
+                        <div class="product-category">Category: {{ Product.product_Category }}</div>
+                    </div>
+                    <a href="{% url 'add_to_cart' Product.id %}" class="site-btn">Add to Cart</a>
+                </div>
+                {% empty %}
+                <p>No products available.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section> -->
+    <!-- <section class="product-section">
+        <div class="container">
+            <p class="section-description"></p>
+    
+            {% for category, products in categories.items %}
+            <div class="category-section">
+                <h2 class="category-title">{{ category }}</h2>
+                <div class="product-grid">
+                    {% for Product in products %}
+                    <div class="product-item">
+                        <div class="product-image">
+                            {% if Product.product_Image %}
+                            <img src="{{ Product.product_Image.url }}" alt="{{ Product.product_Title }}">
+                            {% else %}
+                            <img src="{% static 'images/stockShop2.webp' %}" alt="Default Image">
+                            {% endif %}
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">{{ Product.product_Title }}</div>
+                            <div class="product-description">{{ Product.product_Description }}</div>
+                            <div class="product-price">Price: ${{ Product.product_Price }}</div>
+                            <div class="product-quantity">Quantity: {{ Product.product_Quantity }}</div>
+                        </div>
+                        <a href="{% url 'add_to_cart' Product.id %}" class="site-btn">Add to Cart</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section> -->
+    <section class="product-section">
+        <div class="container">
+            <!-- Search and Sort Bar -->
+            <!-- <div class="search-sort-bar">
+                <form method="get" action="{% url 'products' %}">
+                    <input type="text" name="q" placeholder="Search by name or category..." value="{{ query }}">
+                    <label for="sort-select">Sort By:</label>
+                    <select name="sort" id="sort-select">
+                        <option value="">Sort By</option>
+                        <option value="price" {% if sort_by == 'price' %}selected{% endif %}>Price</option>
+                        <option value="quantity" {% if sort_by == 'quantity' %}selected{% endif %}>Quantity</option>
+                    </select>
+                    <button type="submit" class="site-btn">Search</button>
+                </form>
+            </div> -->
+            <div class="search-sort-bar">
+                <form method="get" action="{% url 'products' %}">
+                    <input type="text" name="q" placeholder="Search by name or category..." value="{{ query }}">
+                    <label for="sort-select">Sort By:</label>
+                    <select name="sort" id="sort-select">
+                        <option value="">Sort By</option>
+                        <option value="price" {% if sort_by == 'price' %}selected{% endif %}>Price</option>
+                        <option value="quantity" {% if sort_by == 'quantity' %}selected{% endif %}>Quantity</option>
+                    </select>
+                    <button type="submit" class="site-btn">Search</button>
+                </form>
+            </div>
+    
+            <!-- Products by Category -->
+            {% for category, products in categories.items %}
+            <div class="category-section">
+                <h2 class="category-title">{{ category }}</h2>
+                <div class="product-grid">
+                    {% for Product in products %}
+                    <div class="product-item">
+                        <div class="product-image">
+                            {% if Product.product_Image %}
+                            <img src="{{ Product.product_Image.url }}" alt="{{ Product.product_Title }}">
+                            {% else %}
+                            <img src="{% static 'images/default-product.png' %}" alt="Default Image">
+                            {% endif %}
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">{{ Product.product_Title }}</div>
+                            <div class="product-description">{{ Product.product_Description }}</div>
+                            <div class="product-price">Price: ${{ Product.product_Price }}</div>
+                            <div class="product-quantity">Quantity: {{ Product.product_Quantity }}</div>
+                        </div>
+                        <a href="{% url 'add_to_cart' Product.id %}" class="site-btn">Add to Cart</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </section>
 
